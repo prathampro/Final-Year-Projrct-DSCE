@@ -1,0 +1,629 @@
+\documentclass[ 12pt,a4paper,twocolumn,fleqn]{report}
+\usepackage{graphicx}
+\setcounter{secnumdepth}{3}
+\usepackage{enumitem}
+\usepackage[a4paper,top=20mm, bottom=30mm, left=10mm, right=25mm]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[]{algorithm2e}
+\usepackage{color}
+\usepackage{fancybox}
+\thisfancypage{%
+  \setlength{\fboxsep}{20pt}\doublebox}{}
+\pagestyle{fancy}
+\usepackage{lineno}
+\usepackage{xtab,booktabs}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\setlength\columnsep{25pt}
+\makeatletter
+\g@addto@macro{\normalsize}{%
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}}
+\makeatother
+\mathindent=0.0pt
+\usepackage{float}
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+\chead{}
+\onecolumn
+\thispagestyle{empty}
+\begin{center}
+\textcolor{blue}{\LARGE{DAYANANDA SAGAR COLLEGE OF ENGINEERING}} \\
+\footnotesize{(An Autonomous Institute affiliated to VTU, Belagavi, Approved by AICTE \& ISO 9001:2008 Certified)} \\
+\footnotesize{Accredited by National Assessment \& Accreditation Council (NAAC) with ‘A’ grade}  \\
+\footnotesize{Shavige Malleshwara Hills, Kumaraswamy Layout, Bengaluru-560078} \\
+\includegraphics[scale=0.4]{media/DSCE-min.png} \\
+\textbf{\LARGE{Final Project Report}} \\
+\textbf{\large on} \\~\\
+\textbf{\LARGE{RESEARCH MANAGEMENT SYSTEM}} \\~\\
+\text{\normalsize Submitted By} \\~\\
+\textbf{\large PRATEEK M \space 1DS18CS094} \\
+\textbf{\large PRATHAM OSWAL \space 1DS18CS095} \\
+\textbf{\large REVANASIDDAYYA \space 1DS18CS102} \\
+\textbf{\large MOTILAL BOHRA \space 1DS18CS755} \\~\\
+\text{\large  Under the guidance of} \\
+\textbf{\large Dr.KAVITHA K S}\\
+\textbf{\large Professor} \\
+\textbf{\large Dept. of CSE}\\
+\textbf{\large DSCE,BANGALORE}\\~\\
+\text{\large{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}} \\
+\textbf{\large{DAYANANDA SAGAR COLLEGE OF ENGINEERING}} \\
+\textbf{\large{Bangalore -560078}} \\
+\end{center}
+\newpage
+   \pagestyle{fancy}
+   \thispagestyle{empty}
+\thisfancypage{%
+  \setlength{\fboxsep}{20pt}\doublebox}{}
+\begin{center}
+\textbf{\Large{VISVESVARAYA TECHNOLOGICAL UNIVERSITY}} \\
+\textbf{\Large{DAYANANDA SAGAR COLLEGE OF ENGINEERING}} \\
+\text{\large Shavige Malleshwara Hills, Kumaraswamy Layout, Bengaluru-560078} \\
+\text{\large Department of Computer Science and Engineering}\\
+\includegraphics[scale=0.4]{media/DSCE-min.png} \\
+\Large{\underline{\textbf{CERTIFICATE}}} \\
+  \end{center}
+\normalsize
+This is to certify that the project entitled \textbf{Research Management System} is a bonafide work carried out by \textbf{Prateek M [1DS18CS094]}, \textbf{Pratham Oswal [1DS18CS095], Revanasiddayya [1DS18CS102]} and \textbf{Motilal Bohra [1DS18CS755]} in partial fulfillment of 8th semester, Bachelor of Engineering in Computer Science and Engineering under Visvesvaraya Technological University, Belgaum during the year 2021-22. \\
+\\
+\textbf{Dr.Kavitha K S}
+\hfill
+\textbf{Dr. Ramesh Babu D R}
+\hfill
+\textbf{Dr. C P S Prakash} \\
+\text{(Internal Guide)}
+\hfill
+\text{Vice Principal \& HOD}
+\hfill
+\text{Principal} \\
+\text{Prof. CSE, DSCE} 
+\hfill
+\text{CSE, DSCE}
+\hfill
+\text{DSCE} \\
+\\
+\text{Signature:...........}
+\hfill
+\text{Signature:...........}
+\hfill
+\text{Signature:...........} \\
+\\
+\\
+\text{Name of the Examiners:}
+\hfill
+\text{Signature with date:} \\
+\text{1...........................}
+\hfill{.............................} \\
+\text{2.............................} 
+\hfill{............................} \\
+\newpage
+  \pagestyle{fancy}
+  \thispagestyle{empty}
+\thisfancypage{%
+  \setlength{\fboxsep}{20pt}\doublebox}{}
+\begin{center}
+\LARGE{{\underline{Acknowledgement}}} \\
+\end{center}
+\normalsize
+We are pleased to have successfully completed the project \textbf{Research Management System}. We thoroughly enjoyed the process of working on this project and gained a lot of knowledge doing so.
+\\
+\hfill
+\\
+We would like to take this opportunity to express our gratitude to \textbf{Dr. C P S Prakash}, Principal of DSCE, for permitting us to utilize all the necessary facilities of the institution.
+\\
+\hfill
+\\
+We also thank our respected Vice Principal, HOD of Computer Science \& Engineering, DSCE, Bangalore,\textbf{ Dr. Ramesh Babu D R}, for his support and encouragement throughout the process.
+\\
+\hfill
+\\
+We are immensely grateful to our respected and learned guide, \textbf{ Dr.Kavitha K S}, Professor CSE, DSCE  for their valuable help and guidance. We are indebted to them for their invaluable guidance throughout the process and their useful inputs at all stages of the process.
+\\
+\hfill
+\\
+We also thank all the faculty and support staff of Department of Computer Science, DSCE. Without their support over the years, this work would not have been possible.
+\\
+\hfill
+\\
+Lastly, we would like to express our deep appreciation towards our classmates and our family for providing us with constant moral support and encouragement. They have stood by us in the most difficult of times.
+\\
+\hfill
+\\
+\begin{flushright}
+\textbf{Prateek M \space 1DS18CS094} \\
+\textbf{Pratham Oswal\space 1DS18CS095} \\
+\textbf{Revansiddiyya \space 1DS18CS102} \\
+\textbf{Motilal Bohra \space 1DS18CS755} \\
+\end{flushright} 
+
+
+
+\newpage
+ \pagestyle{fancy}
+\thisfancypage{%
+  \setlength{\fboxsep}{20pt}\doublebox}{}
+\setstretch{1.5}
+\twocolumn[
+\begin{@twocolumnfalse}
+\begin{abstract}
+Management system standards, sometimes referred to as meta-standards, are being used by an increasing number of businesses worldwide. The study is dispersed, with several studies focusing on particular standards published in separate publications, despite the fact that different management system standards are founded on the same management theories and institutional frameworks. This project's major goal is to conduct an integrative evaluation of the academic literature on meta-standards in order to highlight the most significant discoveries and developments in this field. This integrative research focuses on the two major meta-standards, ISO 9001 and ISO 14001, which have been endorsed by more than 1.3 million organisations worldwide.The report provides a summary of the key research areas and identifies knowledge gaps that will be filled in upcoming studies on the following topics: global governance, diffusion processes, motivations, the advantages of adoption and their effects on performance, internalisation, integration, consulting, and auditing.The website consist of each faculty profile consisting of their personal information with number of years of experience , education,years of experience along with their photo and their grants and rewards with there research paper publication information with a google scholar button with redirects to that particular teachers google scholar id.This website is completely responsive for all kind of devices like mobile,tablet,desktop and so on.This helps students to look into faculties profile and seek help from the desired teachers for the betterment of their carrier  
+\end{abstract}
+\end{@twocolumnfalse}]
+%\linenumbers
+\modulolinenumbers[5]
+\onecolumn
+\newpage
+ \pagestyle{fancy}
+\thisfancypage{%
+  \setlength{\fboxsep}{20pt}\doublebox}{}
+
+\tableofcontents
+\newpage
+ \pagestyle{fancy}
+\thisfancypage{%
+  \setlength{\fboxsep}{20pt}\doublebox}{} \\
+  \text{\textbf{6 Result} . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . .  . . . . . . . . . . . . . . 26}\\
+ \text{\textbf{7 Conclusion} . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . .  . . . . . . . . . . . . . 33}\\
+\newpage
+ \pagestyle{fancy}
+\thisfancypage{%
+  \setlength{\fboxsep}{20pt}\doublebox}{}
+\listoffigures
+\setcounter{figure}{49}
+
+\newpage
+ \pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{Batch-76}
+\fancyhead[RE,LO]{Research  Management System}
+\fancyfoot[RE,LO]{Dept. of CSE, DSCE,2021-2022}
+\pagestyle{fancy}
+\fancyfoot[LE,RO]{\thepage}
+\rfoot{Page \thepage \hspace{1pt} }
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+\setcounter{page}{1}
+\chapter{\centering{Introduction}}
+  %Put the name of the chapter here and next line create a section then the numbering will be similar to chapter 2 
+
+
+Research Management Systems are a comprehensive, web-based, and customised system that enables universities to manage their research projects, financing, publications, and rankings in an efficient manner. The system includes robust reporting capabilities to monitor everything activities of a university's departments and groups in terms of research \\
+•Faculty Research profile\\
+•Faculty members research publications\\
+•Administration of funds and grants by division and researchers\\
+•Research processes workflow:Application, approval, and monitoring of various activities linked to research.\\
+•Research Projects Management.\\
+
+%\section{Sample Section}
+%This is a section. I have used the section tab which you can view in the source file.
+\section{Research Management System}
+%This is a sample subsection. This uses the subsection tab which you can view in the source file. This also numbers the subsection with a decimal with the section number as its root. To start a new section just use the section tab again!
+\subsubsection{What is Research Management System?}
+Research Management System is a website that consist of all the faculties of the department of the college that has each faculties research information done through out their experience along with the conference they attended ant the grants and rewards they have achieved through out the experience
+\subsubsection{Importance of Research Management System}\\
+Research Management System provides a single place for all the research done and ongoing with helps the research views to directly look into a single source and government can look into the researches and fund it and helps the students to look their faculties research 
+
+\newpage
+
+\chapter{\LARGE  Problem Statement and Proposed Solution}
+\section{Problem Statement}
+Colleges works on lot of researches and projects but there is no organized way of storing them . So a web based application is developed which keeps track and manages all the researches and projects made by faculty 
+\section{Existing Systems}
+\subsection{Normal college Website}
+This website is the most popular way for faculties to save their research projects. However, visiting this website and going through all the redirects necessary to read a faculty member's profile takes a lot of time and effort, and it may not be in the viewer or student's best interest.\\
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.14]{media/Screenshot (67).png}\\
+\caption{Normal college website}
+\end{figure}
+\newpage
+ 
+  \subsection{Resume Checking}
+This website is the most common method to store the research works of the faculties this website provides links for the particular teachers resume that redirects to that teachers resume giving a whole lot of information about the teachers here we have to find each teacher by look everywhere which is a time consuming task \\~\\ 
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.14]{media/Screenshot (68).png}\\
+\caption{Resume Of faculty}
+\end{figure}
+\subsection{Google Scholar Finding}
+This is the way in which google scholar provides you a way to find the teachers researches by typing there name and finding their id this me sometimes lead to reading some other teachers profile due to image missing and does not provide a group of teachers of particular institution \\~\\
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.14]{media/Screenshot (69).png}\\
+\caption{Google scholar profile}
+\end{figure}
+
+\newpage
+
+\section{General Problems}\\~\\
+\begin{itemize}
+    \item 	Slow loading speed or recurring downtime :You and your visitors both have a right to expect that your website will load quickly. Your website's conversions, SEO rankings, and traffic are all stolen away by slow performance. Even worse than downtime is when your website is offline.\\
+    \item 	Lack of security:Data on your website should be kept secure. It's a problem when your hosting provider is powerless to stop it. Because it provides the least privacy of all hosting options, shared hosting is definitely the least secure. \\
+    \item  Lack of flexibility in hosting plans:Do you have excessively high hosting costs? Perhaps you are utilising resources that you do not require. This covers things like storage space, the PHP RAM limit, how many MySQL databases and email accounts are allowed, and so on. \\
+    \item Get a good hosting provider: The biggest issue is finding a reputable hosting company. We need to find a hosting company that can meet our needs and whose prices are reasonable. \\
+    \item 	Legibility Issues : For your website to be successful, it must be readable. Even if your interface and design layout are excellent, your visitors will eventually come for the content rather than the aesthetics. Keep your font sizes and styles consistent. Your visitors shouldn't find reading content to be difficult.  \\
+\end{itemize}
+
+\newpage
+ 
+  \section{Proposed Solution}\\~\\
+  The main objectives are:
+  \begin{itemize}
+  \item Provides a single place to look for faculty information
+  \item Avoid unnecessary redirects to look for single faculty profile
+  \item Includes the google scholar button to see faculty google scholar id
+  \item Provides expertise of each faculty
+    \end{itemize}
+  \subsection{WordPress Authentication for Login} \\~\\
+  WordPress provides the authentication for login in as a admin to add remove and modify faculty profile he can perform all the modifications he has the total control over the website.The rest users can use the website only for read purpose they dont have the access to write to the website\\
+   
+We have used OceanWP as the theme it matches the college primary color  and we have used  plugins like\\
+\begin{itemize}
+  \item Edit With Element Plugin that allows to edit each part by simply clicking on it and making change \\
+  \item Slider revolution plugin to display all the faculty in a slider manner
+ \end{itemize}
+ \newpage
+ 
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.35]{media/Screenshot (78).png}\\
+\caption{Login Page}
+\end{figure}
+ This is the login page for the admin once the correct id and password is entered it redirects the admin to the dashboard where the admin can add remove or modify the website .The dashboard is show below where he can add paged to add faculty profile and visit site to see the results whether the faculty profile is added right or not \\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.35]{media/Screenshot (82).png}\\
+\caption{Dashboard}
+\end{figure}
+ \newpage
+ 
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.35]{media/Screenshot (83).png}\\
+\caption{Login Page}
+\end{figure}
+ The admin can click on the edit with elementor to add the website by clicking on the component which the admin wants to modify remove and perform various other activities
+ \newpage
+ 
+\section{System Requirements}
+\begin{itemize}
+    \item Processor: 1 GHz or faster processor  
+\item RAM: Minimum of 2 GB RAM
+ \item GPU: Recommended 
+ \item Camera: Front Camera required
+ \item OS Version: Windows 10 (Preferred) or MacOS 
+\item Stable Internet Connection
+Technology required: 
+\item Html
+ \item Css 
+\item Javascript
+\item Wordpress
+\item MYSQL Database.
+\item JavaScript 
+\item Bootstrap
+\item Tools Required:
+Wordpress 
+
+\end{itemize}
+
+
+ \newpage
+
+  \chapter{Literature survey}
+\textbf{\large Author: Feras et al} \\~\\
+In the web layer, each application screen is coupled to a managed bean object. The managed bean, a Java class object, is created, activated, and destroyed by the web container. By connecting with the database using data access objects, or DAOs, monitoring the status of its linked screen, and responding to events brought on by UI elements on its JSF page, it is used to control the data on its page (query, insert, update, and delete). Therefore, outlining the logic and structure of the controlled beans is the primary goal of the web layer design phase.
+\\~\\
+\textbf{\large Author: Al-Mukhtar el al } \\~\\
+The university website for SEO strategy study is a powerful tool for improving website rankings and has many applications. This article explains search engine optimization (SEO) technology optimization and, during the testing phase, performs SEO for various components of our website, including website design, keywords, web pages, links, and so on. Due to SEO optimization, our website has benefited from effective marketing, which has increased awareness of our college and produced a positive brand effect.
+\\~\\
+\newpage
+ 
+\textbf{\large Author: A. W. Mohamed et al} \\ ~\\
+Because of SOAP's simplicity, usefulness, flexibility, security, and standardisation, the majority of business internet applications use it. Particularly in instances where high performance is required, such portable devices and scientific applications, SOAP's poor performance renders it ineffective.
+The appropriate organisation and conversion of communications is one of the major issues in internet communication.
+This article explains the SOAP idea and many configuration options based on scenario requirements. This study investigates SOAP optimization methods that might aid in performance improvement and barrier avoidance. The SOAP technology is unaffected by these tactics. The solutions significantly improve the performance of SOAP web services, according to installation and performance analysis. Several aspects will be examined in order to optimise the correct employment of SOAP functions, including merely activating those that are necessary and proper differential serialisation of XML messages. This enhancement will increase its capabilities and enable use in a wider range of scenarios.
+\\~\\
+\textbf{\large Author: Kannan P et al} \\~\\
+The Research Information Management system serves as the research echo system's knowledge management system. It links organisations, academic staff, and a substantial national network of researchers. Due to a lack of research activity sharing or a lack of familiarity with open source tools and techniques, research and advances inside or across the institute are not visible to or do not garner enough attention from the research community.
+RMS gives you a clearer picture of what's going on at your institution and helps you report research more effectively. In recent years, the research administration has shown a strong willingness to methodically organise research activities at the institutional level.The present system and data of the organisation are incompatible. Consequently, Cornel University developed VIVO in 2004 as an open source, semantic-based, community-maintained platform for locating fresh research and connecting academics. VIVO simplifies the gathering, organising, and visualising of intellectual work. Professors and organisations can use VIVO to display academic materials, carry out research, look for collaborators, look at networks, and assess the effects of their activity. The institute-level distributed research information management system, which is based on VIVO, assists academics in presenting their research efforts to peers.
+\newpage
+ 
+\textbf{\large Author: Jin Chen, G et al} \\~\\
+In autonomous provisioning, a resource management provides resources to an application as needed, such as during spikes in load. When employing modeling-based methodologies, provisioning the web and application server tiers in dynamic content servers has shown to be rather successful. On the other hand, simulating the behaviour of the back-end database server layer could be challenging. Our proactive method entails keeping an eye on the system's stabilising periods after adaptation in order to increase forecast accuracy and decrease oscillations.
+This proactive self-configuring solution for database layer scalability contrasts with a reactive approach. Our research utilising the industry-recognized TPC-W e-commerce benchmark demonstrates that the proactive method minimises both the frequency and peak amount of SLA breaches when compared to the reactive system. Additionally, by including knowledge and observation of system stabilising intervals brought on by adaptation in our replicated system to the proactive strategy, we successfully eliminate resource allocation oscillations. An innovative proactive approach is provided in this study for including database replicas in applications. resources in web server clusters for dynamic content that use the traditional "K-nearest-neighbors (KNN) machine learning methods." Our KNN technique uses light-weight monitoring of crucial system and application characteristics to decide how many databases to allocate to a given workload.
+
+\\~\\
+\textbf{\large Author: Manhas, Dr.} \\~\\
+This article looks at the changes in page load times over time, which are an important part of user feedback for any website. And we frequently decide to disregard it in favour of web page content, cool functionality, or more attractive visual design. Unfortunately, website users prioritise speed over all other services we would like to provide. Additionally, page loading time is becoming a more crucial aspect in search engine results. The phrases "websites," "html," "container objects (COs)," and "external objects" are only a few of those utilised in this article (EOs). I. INTRODUCTION EXAMPLE How quickly a page loads is a key indicator of how successfully a website serves its users. The time elapsed between a user's request for a new page and the moment the browser completes rendering it is known as the page load time.
+\newpage
+
+  \textbf{\large Author: Hui, Zhou} \\~\\
+Search engine optimization for a website uses a wide range of strategies. Taking into mind the search engine's performance from the website structure parts' layout to the individual content designs need, among other things, the page's title, "keywords, domain names, and links." Furthermore, in order to finish a website, developers need to keep learning about the details of every website, mastering an efficient SEO strategy, and maintaining the website's content in order to increase traffic and, as a result, the website's competitiveness in the market.
+ \\~\\
+  \textbf{\large Author: Black, Elizabeth. et al} \\~\\
+It's difficult to create a website for a university library. The best ones make the most of the organization's resources, such giving quick access to those who create online content so they may update it without needing to grasp HTML technically. On top-notch websites, centralised presentation management also helps to provide a consistent user experience. This idea is supported by online content management systems (CMS). More than just technical factors must be taken into account when choosing an online content management system (CMS); this is best accomplished in collaboration with web content providers. One such instance is the selection procedure used by the OSU Libraries, which is detailed below.
+\\~\\
+\textbf{\large Author: Schuetzenmeister, Falk}\\~\\
+Work performed at organisational boundaries as well as the increasingly muddled and foggy boundaries between science and society may both be described by the term "research management."
+Members of various research organisations can cooperate quite successfully, especially if they have similar values, speak the same discipline's language, and are interconnected by a complicated web of interpersonal interactions, which is explained by institutional isomorphism. The loose coupling hypothesis describes organisational resources as a very adaptable medium for problem-solving.
+\newpage
+ 
+ The first problem is that it seems difficult to organise and direct scientific advancement through research strategy (if not impossible). Second, official organisations have the power to support and advance research. Access to resources and particular work environments boost the chances of effective research and higher production.
+\\~\\
+  \textbf{\large Author: Xiaoping Liu et al} \\~\\
+In this paper, ant colony optimization (ACO) methods are proposed as a novel strategy for resolving site selection problems. One of the most frequent challenges in urban planning is the placement of public amenities. The goal is to locate a facility in the N best places (targets) possible in order to maximise overall benefits and minimise total expenditures. The brute force method of addressing a question is straightforward since it enumerates all potential outcomes. Large spatial search issues are challenging for the brute force approach to solve due to the massive size of the solution space. Ant colony optimization may be used to locate the optimal spot. This study recommends integrating ACO with geographic information systems in order to incorporate various forms of geographic data in the optimization. Additionally, ACO has undergone a lot of adjustments to ccount for issues with spatial allocation. The use of multiscale optimization, tabu table alteration, and neighbourhood pheromone diffusion methodologies distinguishes this work from others. This method was used to designate a fictitious facility in the Chinese city of Guangzhou. The trial results demonstrate that, for resolving ordinary site search issues, the proposed model outperforms both the single search and the evolutionary approach.
+\\~\\
+  \textbf{\large Author: Cyr, Dianne, et al} \\~\\
+The aesthetics and emotional appeal of e-commerce websites are enhanced by effective graphic design. In order to get knowledge on how Internet users interpret human images utilised in website design, a controlled experiment was carried out using a questionnaire, interviews, and eye-tracking methods. Three distinct human image conditions were created using human photographs with facial characteristics, human photos without facial features, and a control condition with no human images. In order to provide the idea that the material was more dependable, attractive, and socially significant, human faces were added to websites. Increases in trust were anticipated to follow increases in perceived social presence and physical beauty.
+\newpage
+ 
+Although human pictures seemed to have a universal impact across nation groups, the interview data indicated four concepts: aesthetics, symbolism, emotional property, and functional property. Participants from each culture concentrated on different subjects when it came to website design. The ramifications of the study and practise are examined.
+\\~\\
+  \textbf{\large Author: Racković, Miloš} \\~\\
+The construction of the information systems at the Faculty of Sciences in Novi Sad utilising open source tools and technologies is discussed in this article. The IT infrastructure of the Faculty is made up of a variety of servers and application platforms, the bulk of which were constructed using outdated technology.
+Enterprise JavaBeans 3.0 (EJB 3.0), which is implemented by the JBoss 4 application server, is the primary technology they use. This technology takes care of the great majority of the duties that the system architect must carry out. The JBoss application server includes a web container that supports EJB components and can serve JSP (Java Server Pages) and JSF (Java Server Faces) pages. The preferred database management system is MaxDB 7.6. Relational database MaxDB complies with ANSI SQL-92 database management system.This DBMS was chosen in addition to the aforementioned considerations because it offers an Oracle mode that permits connecting with databases that employ the Oracle SQL language.
+An efficient and adaptable architecture for a modern faculty information system was developed, particularly to meet the IT needs of the Novi Sad University's Faculty of Sciences, but it may be used by any faculty.
+\\~\\
+  \textbf{\large Author: Velásquez-Duran et al} \\~\\
+ All research activities and the data they produce are managed globally using the CRIS (Current Research Information System) technology. These information systems' main functions are information gathering, analysis, dissemination, and informational support. They could be produced internally by a company or obtained from a third party vendor.
+The goal is to determine their research methodology as well as the fields, countries, and universities where they have published. 33 papers from Web of Science (WoS) and Scopus are included in a detailed mapping of the literature from 2007 to 2017.
+\newpage
+
+To achieve accurate findings, the systematic mapping studies' design and review phases used the assessment guide for researchers and the related evaluation criteria. In addition, a method for defining direct judgement rules for classifying an article based on the results of the assessments of several scholars was implemented.
+The findings show that information science, library science, and computer science are the main research areas; Europe has the highest concentration of publications; the research focuses on evaluation research; contributions are made with a view to developing processes and models as well as outlining the uses and applications of CRIS.
+\\~\\
+  \textbf{\large Author: Z. Zhenxiang et al} \\~\\
+ Users are beginning to value web customisation more and more.
+We describe a general personalised Web service approach and classify them by initiative side based on a literature analysis. Some writers focus on the client-side interactive user profile in their customization research, while others talk about the server-side process, and yet other authors pay attention to the user's engagement with the Web service or Internet. In order to create personalised Web sites, it is crucial that we understand how people feel about utilising personalised Web services in terms of usability and utility. The technological acceptance model (TAM) is then reviewed, and three key elements—visual, structural, and functional aspects—are proposed to build a Web site for a customised service. These three components, in our opinion, are the fundamental design components that influence users' perceptions of how simple and helpful a customised Web site is, as well as how they feel about using it. This study attempts to provide a broad design framework for Web developers, designers, and producers to create a straightforward, personalised website that is easier to use and delivers
+\\~\\
+  \textbf{\large Author: Deborah E. Rosen et al} \\~\\
+ Web content has been demonstrated to be one of the major factors affecting customers' decision to return. Great site design depends on selecting the right online material, which can include text, images, graphics, styles, sound, motion, and even even aroma. While the marketing techniques that entice people to websites are becoming better known, the phenomenon of converting online surfers into repeat visitors is less well-understood.
+\newpage
+ 
+WSPS through an empirical study based on Rachel and Stephen Kaplan's environmental psychology research. The findings emphasise the core components of sound website design and offer insight into the site design characteristics that may boost the chance of a return visit.
+\\~\\
+  \textbf{\large Author: Rashidov, Aldeniz} \\~\\
+  The Faculty Information Systems (FIS), which were created at the Technical University of Gabrovo to satisfy the demands of the faculty, are the subject of this research. FIS aims to improve the overall efficiency of the University by providing a reliable information medium for controlling and monitoring educational quality at the organisational level that dictates structure, the Faculty.
+The information system makes use of both a Microsoft Network and a Microsoft Structured Query Language (MSSQL) database. The Active X Data Objects (ADO) interface is used by the FIS programme to connect to MSSQL.
+Publications on the Internet media are anticipated, together with the applications utilised by the various channels in the FIS and meeting system requirements. \\ The applications in the FIS may be categorised into three groups based on their intended uses: student status, educational process, and instructors. The system's software modules use the ADO interface to connect to the database running on the MSSQL server. A key element of database administration, stored procedures provide rapid and flexible data processing.
+\\~\\
+  \textbf{\large Author: Howcroft, Debra et al} \\~\\
+ The purpose of this study is to investigate website development and provide a technique to support it. There are both proponents of approaches and critics of the restrictions and rigidity of prescriptive frameworks. It is anticipated that the technique given here will serve as a useful foundation for guiding the process rather than being a one-size-fits-all solution to web development issues. The waterfall technique uses a succession of cascading stages that span the whole development process with only minor iterations in between. The waterfall technique has some drawbacks, including its rigid structure and the absence of iteration between any phases other than those that are immediately nearby (and also IS). As was said Web, as was previously stated.
+\newpage
+ 
+is an environment that transforms quickly and where new technologies are constantly being introduced. Website development techniques must be adaptable enough to deal with change.
+\\~\\
+  \textbf{\large Author: Ping Zhang et al} \\~\\
+The development of theoretical techniques is required in light of the increase in Web-user interface studies. This research presents a two-factor website design and evaluation methodology. The concept separates website design elements into two categories: incentive and cleanliness. A website is functional and useable when it has sanitary features; when they are missing, visitors get dissatisfied (and are thus dissatisfiers). On the other side, motivational components encourage user satisfaction, which boosts the website's worth (thus satisfiers). An empirical investigation is conducted during two phases. In Phase I, 76 participants selected 44 fundamental characteristics and 12 feature categories as Web design variables. 79 different individuals mentioned motivational and hygienic variables during Phase II.The findings demonstrated that the two-factor technique may be used to study Web user interfaces. Participants in Phase II also indicated that their beliefs about what motivates individuals and what defines cleanliness could vary over time or as their understanding of certain design characteristics increases, suggesting that the model should be further studied and perhaps expanded. There are design and assessment instructions in addition to research directives.
+\\~\\
+\textbf{\large Author: Reifer, D.J.}\\~\\
+Having a size measure is the first step in creating a model that reliably forecasts the costs and schedules for web development. The mathematical difficulties of forecasting effort and time must be overcome before such models can be deployed. The two most crucial elements are the form of the mathematical equations and the scheduling regulation. The equations can be written as regressions, according to the data analysis. The majority of estimating methods, however, do not appear to be able to forecast Web development durations with any degree of precision due to the common cube-root connection between effort and length. In order to characterise the link more clearly, Barry Boehm of the University of Southern California is considering employing a square-root relationship. Larry Putnam claims that a fourth power may accurately depict these relationships in a number of his works.
+
+\newpage
+ 
+  \chapter{Architecture and System Design}
+ 
+\section{Level Architecture Diagram}\\~\\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.5]{media/Screenshot (73).png}
+\caption{Level Architecture Diagram}
+\end{figure}\\
+The overview of the system is represented above. It shows the modes involved in building the system i.e,
+\begin{itemize}
+\item Login
+\item Admin
+
+\item Read
+\item Write
+\end{itemize}
+  \newpage
+ 
+\section{Flow Diagram} \\~\\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.5]{media/Screenshot (76).png}
+\caption{Flow Diagram}
+\end{figure}\\
+The overall block diagram of the proposed system is shown above
+\begin{itemize}
+\item The main block diagram of the system which consist of main constituents is shown
+\item Input can be given as a text (which can be copied from a text file or any web page), also an URL of a page can be provided
+\item 	The main architecture of the project is represented as Transformer
+\item Input text is processed and then fed to the Pre-Processing and the transformers
+\item Output Summarized text will be displayed in the UI.
+\end{itemize}
+
+\newpage
+ 
+\section{System Design} \\~\\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.5]{media/Screenshot (85).png}
+\caption{System Design}
+\end{figure}\\
+The above image represents how the website was developed being in the admin mode.Once you login as admin you will find a dashboard where u can prepare a page for each faculty and save it then move to the website by clicking visit site and there u cad add item by clicking edit with elementor on the header then we can add item(faculty) and then link the faculty by adding the faculty page link we created prior then we can see the faculty profile has been added 
+\newpage
+ 
+    \chapter{Implementation} \\~\\
+    \section{Implementation Platform} \\~\\
+    \textbf{\Large Software}\\
+    \begin{enumerate}
+        \item \textbf{HTML} :  A common markup language for building Web pages is called HyperText Markup Language. It outlines the structure of web pages. Tim Berners-Lee invented HTML in 1991. HTML utilises predefined elements and tags that instruct the browser how to present the material. display of photos, text, and other items is possible.\\
+    \item \textbf{CSS} : For a more attractive, creative presentation of the web pages, Cascading Style Sheets are employed. In 1994, H akon Wium Lie developed CSS. It makes it easy to individually apply styles to each page. Additionally, it may be used to apply styles to every page, saving time. \\
+    \item \textbf{Bootstrap}: A free and open-source CSS framework called Bootstrap is designed for front-end web development that prioritises mobile responsiveness. It includes design templates for typography, forms, buttons, navigation, and other interface elements that are based on CSS and JavaScript. \\~\\
+    \newpage
+ 
+    \item \textbf{Javascript} : JScript is a portable, interpreted scripting language. Both client-side and server-side development projects typically employ JavaScript. In order to manipulate a browser and its Document Object Model, the client-side provides objects (DOM). As a result, HTML forms may react to user actions including mouse clicks, form submissions, and page navigation. It enables file manipulation on a server or enables communication between a website and a database, ensuring the flow of information from one calling to another. \\
+\item \textbf{MYSQL} : MySQL For MySQL relational databases, Workbench is a visual tool for creating and modelling databases. It enables for the modification of existing databases as well as the generation of physical data models. Integrated inside Workbench is a visual SQL editor. You may create, amend, and execute queries on MySQL server databases using the SQL editor. Additionally, several inquiries may be launched, presented on different tabs, and kept in the history panel for subsequent retrieval and execution. \\
+\item \textbf{Wordpress} : WordPress is a content management system (CMS) that you may use to host and build websites with. The template system and plugin architecture of WordPress make it possible to customise any website to fit your business, blog, portfolio, or online store.
+
+    \end{enumerate}
+    
+   \newpage
+    
+\section{Implementation Details} \\
+\text 1. The dashboard appears here. We have two different modes in total: admin mode and user mode. The administrator mode is shown in the image below, where he may perform any necessary site adjustments.\\
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.27]{media/1.jpeg}\\
+\caption{Admin Mode Login Page}
+\end{figure}\\
+\text 2. This is the page view which is handled by Admin. Here the admin can add,delete or update the pages on the website based on the requirements.\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.27]{media/2.jpeg}
+\caption{All Pages}
+\end{figure}
+ \newpage
+ 
+\text 3. This is the edit page feature.Where we can design our website pages with more creativity and beautiful UI.\\ \\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.27]{media/3.jpeg}
+\caption{Page Editing Mode}
+\end{figure}\\
+\text 4.This is the picture which contain the inner details of editing the pages.We can see the options of adding images,tabular data,add buttons,add the option of google maps etc.\\ \\
+ 
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.27]{media/4.jpeg}
+\caption{Page Editor}
+\end{figure}
+\newpage
+
+\text 5.This picture depicts the internal database of images of all the faculties.We can add or delete the new or older images here.\\ \\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.27]{media/5.jpeg}
+\caption{Media Section}
+\end{figure}\\
+\text 6.Here we can add the details of the faculty like area of interest, specialization, google scholar link etc.\\ \\ 
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.27]{media/6.jpeg}
+\caption{Slider Editor}
+\end{figure}
+   \newpage
+   
+\textbf{\LARGE Result} \\
+\text After following all the best practices for developing a website the following results were recorded.Below pictures shows the end results of our website.\\ 
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/7.jpeg}
+\caption{Login Page}
+\end{figure} \\
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/8.jpeg}
+\caption{Pages Details}
+\end{figure}
+\newpage
+ 
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/9.jpeg}
+\caption{Home Pages} \\~\\
+\end{figure} \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/10.jpeg}
+\caption{Research Publication Pages}
+\end{figure}
+\newpage
+
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/11.jpeg}
+\caption{HOD Detail Pages}
+\end{figure} \\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/12.jpeg}
+\caption{Slider}
+\end{figure}
+\newpage
+
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/13.jpeg}
+\caption{Publication Page}
+\end{figure}\\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/14.jpeg}
+\caption{Faculty Slider}
+\end{figure}
+\newpage
+
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/15.jpeg}
+\caption{Journal Page}
+\end{figure}\\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/16.jpeg}
+\caption{Conference Page}
+\end{figure}
+\newpage
+
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/17.jpeg}
+\caption{Google Scholar}
+\end{figure}\\~\\
+ \begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/19.jpeg}
+
+\end{figure}
+\newpage
+ 
+\begin{figure}[h!]\centering
+\includegraphics[scale=0.30]{media/18.jpeg}
+\caption{Faculty View}
+\end{figure}
+\newpage
+
+  \textbf{\LARGE CONCLUSION}\\~\\
+\text A crucial component in faculty management, the created and fully operational RSM facilitates communication between faculty departments, organises the teaching process, organises and manages students, and offers assistance to academic personnel. The three sections of the RSM are lecturers (personal information about lecturers), students (information about admission, status of the student during the period of study, exam results, graduation, and so forth), and management of the teaching process (information about admission, status of the student during the period of study, exam results, graduation, and so forth) (information about curricula, monitoring of the teaching process, etc.).The system's usefulness is enhanced by the use of web applications to deliver continuously updated data about the faculty's students and academic staff. The system was implemented using contemporary communication and information technology. In the system's future growth, the RSM may be used to facilitate inter-institutional communication and adopt new, quicker data compression techniques in data flow.
+\newpage
+ 
+  \textbf{\LARGE Refrences}\\~\\
+  \begin{itemize}
+    \item Hui, Zhou & Shigang, Qin & Jinhua, Liu & Jianli, Chen. (2012). Study on Website Search Engine
+Optimization. 930-933. 10.1109/CSSS.2012.236 Analysis and Design of an Accounting Information
+System
+\item Feras Al-HawariComputer Engineering Department German Jordanian University Amman, Jordan
+DOI: http://dx.doi.org/10.24178/irjece.2017.3.2.16
+ \item Al-Mukhtar, Firas & Hamad, Nawzad & Kareem, Shahab. (2021). SEARCH ENGINE OPTIMIZATION: A
+REVIEW. Journal of Applied Computer Science Methods. 17. 69-79. 10.23743/acs-2021-07.
+ \item Black, Elizabeth. (2012). selectiNG A weB coNteNt MANAGeMeNt sYsteM For AN AcADeMic liBrArY
+weBsite | BlAcK 185 Selecting a Web Content Management System for an Academic Library Website.
+Information Technology and Libraries. 30. 10.6017/ital.v30i4.1869.
+ \item Howcroft, Debra and Carroll, John, "A Proposed Methodology for Web Development" (2000). ECIS 2000
+Proceedings. 73. http://aisel.aisnet.org/ecis2000/73
+\item A. W. Mohamed and A. M. Zeki, "Web services SOAP optimization techniques," 2017 4th IEEE
+International Conference on Engineering Technologies and Applied Sciences (ICETAS), 2017, pp. 1-5,
+doi: 10.1109/ICETAS.2017.8277881
+\item Xia Li, Jinqiang He & Xiaoping Liu (2009) Intelligent GIS for solving high‐dimensional site selection
+problems using ant colony optimization techniques, International Journal of Geographical Information
+Science, 23:4, 399-416, DOI: 10.1080/13658810801918491
+ \item Manhas, Dr. (2013). A Study of Factors Affecting Websites Page Loading Speed for Efficient Web
+Performance. International Journal of Computer Sciences and Engineering. 
+\item Z. Pei and Z. Zhenxiang, "A Framework for Personalized Service Website based on TAM," 2006
+International Conference on Service Systems and Service Management, 2006, pp. 1598-1603, doi:
+10.1109/ICSSSM.2006.320784.
+\newpage
+
+\item BANERJEE, J., HSIAO, D.K., AND KERR, Concept and Capabilities of a Database computer. Tech. Rep.
+OSU-CISRC-TR-77-4, Ohio State U., Columbus, Ohio, June 1977; also available in BANERJEE, J., AND
+HS{AO, D. K. A methodology for supporting existing CODASYL database with new database machines.
+Proc. ACM 78 Conf., Washington, D. C., Dec. 1978.
+\item Cyr, Dianne, et al. “Exploring Human Images in Website Design: A Multi-Method Approach.” MIS Quarterly,
+vol. 33, no. 3, Management Information Systems Research Center, University of Minnesota, 2009, pp. 539–
+66, https://doi.org/10.2307/20650308.
+\item  Ping Zhang,Gisela M. von Dran First published: 06 October 2000
+\item  Deborah E. Rosen, Elizabeth Purinton, Website design: Viewing the web as a cognitive landscape,
+Journal of Business Research, Volume 57, Issue 7,2004,Pages 787-794,ISSN 0148-2963,
+https://doi.org/10.1016/S0148-2963(02)003533
+https://www.sciencedirect.com/science/article/pii/S0148296302003533
+\item Jin Chen, G. Soundararajan and C. Amza, "Autonomic Provisioning of Backend Databases in Dynamic
+Content Web Servers," 2006 IEEE International Conference on Autonomic Computing, 2006, pp. 231-
+242, doi: 10.1109/ICAC.2006.1662403
+\item Reifer, D.J. (2000). Web development: estimating quick-to-market software. , 17(6), 57–64.
+doi:10.1109/52.895169 
+\item Skrbic, Srdjan & Bodroski, Zarko & Pupovac, B. & Racković, Miloš. (2007). Faculty information system
+based on open source technologies. Novi Sad Journal of Mathematics. 37. 181-192.
+\item Velásquez-Duran, Anabel & Ramírez-Montoya, María-Soledad. (2018). Research Management Systems:
+Systematic Mapping of Literature (2007-2017). International Journal on Advanced Science,
+Engineering and Information Technology. 8. 44. 10.18517/ijaseit.8.1.3307
+\item Rashidov, Aldeniz. (2002). FACULTY INFORMATION SYSTEM. 10.13140/2.1.1046.9449
+\item ] Kannan P, Sanjay Kumar Tiwari https://ir.inflibnet.ac.in/handle/1944/2114
+\item Schuetzenmeister, Falk. (2010). University Research Management: An Exploratory Literature Review.
+Institute of European Studies, UC Berkeley, Institute of European Studies, Working Paper Seriess
+
+\end{itemize}
+\end{document}
